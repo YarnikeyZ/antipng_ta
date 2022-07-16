@@ -8,8 +8,11 @@ cscale  = [0, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 2
 
 def do_art(y, path_to_image):
     try:
+        img = Image.open(path_to_image).convert('L')
+        if y == 0:
+            y = img.size[1]
         x = y*2
-        img = Image.open(path_to_image).convert('L').resize((x, y), Image.Resampling.LANCZOS)
+        img = img.resize((x, y), Image.Resampling.LANCZOS)
         obj = img.load()
         pic = ''
         for y_pix in range(0, img.size[1]):
