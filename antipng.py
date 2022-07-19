@@ -7,7 +7,6 @@ sscale = ['.', "'", ',', ':', '^', '"', ';', '*', '!', '²', '¤', '/', 'r', '('
 cscale  = [0, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 15]
 
 def do_art(path_to_image: str, y: int, colors: bool, symbols: bool):
-    print(bool(colors), bool(symbols))
     try:
         img = Image.open(path_to_image).convert('L')
         if y == 0:
